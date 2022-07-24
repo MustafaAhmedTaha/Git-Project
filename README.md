@@ -1,5 +1,5 @@
 # Basic Recon Methodology
-- [Subdomains Enumeration](#Subdomains-Enumeration)
+- [Subdomains Enumeration](#1-subdomains-enumeration)
 ## 1. Subdomains Enumeration
 
 ### 1. Active
