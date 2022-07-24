@@ -1,8 +1,20 @@
 # Basic Recon Methodology
 ### Index:
 - [Subdomains Enumeration](#1-subdomains-enumeration)
-  - [Active](#1-active)
-  - [Passive](#2-passive)
+    - [Active](#1-active)
+    - [Passive](#2-passive)
+    - [Live Subdomains](#3-live-subdomains)
+- [Subdomain Takeover](#2-subdomain-takeover)
+- [Open Source Intelligence](#3-open-source-intelligence)
+- [Waybackurls](#4-waybackurls)
+- [Nuclei Scanning](#5-nuclei-scanning)
+- [Github](#6-github)
+  - [Automation](#1-automation)
+  - [Manually](#2-manually)
+- [Content Discovery](#7-content-discovery)
+  - [Brute-force](#1-brute-force)
+- [Finding XSS in a wide scope](#8-finding-XSS-in-a-wide-scope)
+
 ## 1. Subdomains Enumeration
 
 ### 1. Active
