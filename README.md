@@ -4,28 +4,33 @@
 
 - Amass subdomain enumeration using the command:
 
-``` sudo docker run -v /home/mu57f4/bin/amass_output:/.config/amass/ amass enum -d domain.com
+``` 
+sudo docker run -v /home/mu57f4/bin/amass_output:/.config/amass/ amass enum -d domain.com
 ``` 
 
-``` sudo docker run -v /home/mu57f4/bin/amass_output:/.config/amass/ amass enum -d domain.com
+``` 
+sudo docker run -v /home/mu57f4/bin/amass_output:/.config/amass/ amass enum -d domain.com
 ``` 
 
 ### 2. Passive
 
 - Sublist3r using the command:
 
-``` python3 [sublist3r.py](http://sublist3r.py) -d [domain.com](http://domain.com) -o domain-sublist3r-output.txt
+``` 
+python3 [sublist3r.py](http://sublist3r.py) -d [domain.com](http://domain.com) -o domain-sublist3r-output.txt
 ``` 
 - Merge the output of amass & sublist3r to get a collection of subdomains using this command:
 
-``` cat amass-output.txt > sublist3r-output.txt ; cat sublist3r-output.txt | sort | uniq | tee domain-subs.txt
+``` 
+cat amass-output.txt > sublist3r-output.txt ; cat sublist3r-output.txt | sort | uniq | tee domain-subs.txt
 ``` 
 
 ### 3. Live Subdomains
 
 - Check the active subdomains with HTTPX using the command:
 
-``` ./httpx -l path/to/domain-sublist3r-output.txt -ports "80|443|8000|8443” -o domain-active-subs.txt
+``` 
+httpx -l path/to/domain-sublist3r-output.txt -ports "80|443|8000|8443” -o domain-active-subs.txt
 ``` 
 
 - Now we have to files:
@@ -36,7 +41,8 @@
 
 - Check the subdomains for takeover with tackover using the command:
 
-``` python3 takeover.py -l domain-active-subs.txt -o domain-takeover.txt -t 5
+```
+python3 takeover.py -l domain-active-subs.txt -o domain-takeover.txt -t 5
 ``` 
 
 # 3. Open Source Intelligence
@@ -53,7 +59,8 @@
 
 - Check for common known vulnerabilities in waybackurl links and domain-active-subs.txt file using this command:
 
-``` nuclei -t nuclei-templates/ -l domain-active-subs.txt
+``` 
+nuclei -t nuclei-templates/ -l domain-active-subs.txt
 ``` 
 
 # 6. Github
@@ -62,7 +69,8 @@
 
 - Looking for Leaked data like credentials, tokens, secrets with Githound using the command:
 
-``` echo "\"[domain.com](http://domain.com/)\"" | ./githound --dig-files --dig-commits --many-results --threads 5
+``` 
+echo "\"[domain.com](http://domain.com/)\"" | ./githound --dig-files --dig-commits --many-results --threads 5
 ``` 
 
 ### 2. Manually
@@ -82,7 +90,6 @@
 
 - After collecting parametric assets from waybackurls and spidered one use KXSS tool to find reflecting parameters and chars using the command:
 
-``` cat urls | kxss > domain-kxss.txt
 ``` 
-
-[groupservicesprod2.manulife.com](http://groupservicesprod2.manulife.com/)
+cat urls | kxss > domain-kxss.txt
+``` 
