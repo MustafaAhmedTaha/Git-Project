@@ -1,8 +1,8 @@
 # Basic Recon Methodology
 ### Index:
 - [Subdomains Enumeration](#1-subdomains-enumeration)
-  -[Active](#1-active)
-  -[Passive](#2-passive)
+  - [Active](#1-active)
+  - [Passive](#2-passive)
 ## 1. Subdomains Enumeration
 
 ### 1. Active
